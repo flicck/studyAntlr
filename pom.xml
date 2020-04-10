@@ -40,8 +40,28 @@
         </dependency>
 
     </dependencies>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.8</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <visitor>true</visitor>
+                    <sourceDirectory>./src/main/java/org/abcd/examples/simpleSplit</sourceDirectory>
+                    <treatWarningsAsErrors>true</treatWarningsAsErrors>
+                </configuration>
+            </plugin>
+
+
             <!-- This plugin sets up maven to use Java 7 -->
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
@@ -59,23 +79,23 @@
                    mvn antlr4:antlr4
                  In any case, Maven will invoke this plugin before the Java source is compiled
               -->
-            <plugin>
-                <groupId>org.antlr</groupId>
-                <artifactId>antlr4-maven-plugin</artifactId>
-                <version>4.8</version>
-                <configuration>
-                    <sourceDirectory>${basedir}/src</sourceDirectory>
-                    <listener>true</listener>
-                    <visitor>true</visitor>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>antlr4</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.antlr</groupId>-->
+<!--                <artifactId>antlr4-maven-plugin</artifactId>-->
+<!--                <version>4.8</version>-->
+<!--                <configuration>-->
+<!--                    <sourceDirectory>${basedir}/src</sourceDirectory>-->
+<!--                    <listener>true</listener>-->
+<!--                    <visitor>true</visitor>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>antlr4</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <!-- plugin to create a self-contained portable package
                  This allows us to execute our application like this:
                  java -cp target/array-init-1.0-jar-with-dependencies.jar org.abcd.examples.ArrayInit.ArrayInit

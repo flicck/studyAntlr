@@ -1,27 +1,23 @@
-// Generated from D:/ideaProject/studyProject/studyAntlr/src/main/java/org/abcd/examples/simpleSplit\split.g4 by ANTLR 4.8
-package org.abcd.examples.simpleSplit;
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+// Generated from D:/ideaProject/openSourceProject/studyAntlr/src/main/java/org/abcd/examples/simpleSplit1\Split1.g4 by ANTLR 4.8
+package org.abcd.examples.simpleSplit1;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class splitParser extends Parser {
+public class Split1Parser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, STR2=2, STR1=3, WS=4;
+		STR1=1, STR2=2, STR3=3;
 	public static final int
 		RULE_stat = 0, RULE_expr = 1;
 	private static String[] makeRuleNames() {
@@ -33,13 +29,12 @@ public class splitParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "','"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, "STR2", "STR1", "WS"
+			null, "STR1", "STR2", "STR3"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -77,7 +72,7 @@ public class splitParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "split.g4"; }
+	public String getGrammarFileName() { return "Split1.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -88,7 +83,7 @@ public class splitParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public splitParser(TokenStream input) {
+	public Split1Parser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -106,15 +101,15 @@ public class splitParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_stat; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).enterStat(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).enterStat(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).exitStat(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).exitStat(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof splitVisitor) return ((splitVisitor<? extends T>)visitor).visitStat(this);
+			if ( visitor instanceof Split1Visitor ) return ((Split1Visitor<? extends T>)visitor).visitStat(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -126,21 +121,17 @@ public class splitParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(4);
-			expr();
-			setState(9);
+			setState(7);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__0) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STR1) | (1L << STR2) | (1L << STR3))) != 0)) {
 				{
 				{
-				setState(5);
-				match(T__0);
-				setState(6);
+				setState(4);
 				expr();
 				}
 				}
-				setState(11);
+				setState(9);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -168,37 +159,54 @@ public class splitParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class Str1Context extends ExprContext {
-		public TerminalNode STR1() { return getToken(splitParser.STR1, 0); }
-		public Str1Context(ExprContext ctx) { copyFrom(ctx); }
+	public static class Str3Context extends ExprContext {
+		public TerminalNode STR3() { return getToken(Split1Parser.STR3, 0); }
+		public Str3Context(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).enterStr1(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).enterStr3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).exitStr1(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).exitStr3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof splitVisitor) return ((splitVisitor<? extends T>)visitor).visitStr1(this);
+			if ( visitor instanceof Split1Visitor ) return ((Split1Visitor<? extends T>)visitor).visitStr3(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class Str1Context extends ExprContext {
+		public TerminalNode STR1() { return getToken(Split1Parser.STR1, 0); }
+		public Str1Context(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).enterStr1(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).exitStr1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof Split1Visitor ) return ((Split1Visitor<? extends T>)visitor).visitStr1(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	public static class Str2Context extends ExprContext {
-		public TerminalNode STR2() { return getToken(splitParser.STR2, 0); }
+		public TerminalNode STR2() { return getToken(Split1Parser.STR2, 0); }
 		public Str2Context(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).enterStr2(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).enterStr2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof splitListener) ((splitListener)listener).exitStr2(this);
+			if ( listener instanceof Split1Listener ) ((Split1Listener)listener).exitStr2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof splitVisitor) return ((splitVisitor<? extends T>)visitor).visitStr2(this);
+			if ( visitor instanceof Split1Visitor ) return ((Split1Visitor<? extends T>)visitor).visitStr2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -207,23 +215,31 @@ public class splitParser extends Parser {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_expr);
 		try {
-			setState(14);
+			setState(13);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case STR2:
-				_localctx = new Str2Context(_localctx);
+			case STR1:
+				_localctx = new Str1Context(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(12);
+				setState(10);
+				match(STR1);
+				}
+				break;
+			case STR2:
+				_localctx = new Str2Context(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(11);
 				match(STR2);
 				}
 				break;
-			case STR1:
-				_localctx = new Str1Context(_localctx);
-				enterOuterAlt(_localctx, 2);
+			case STR3:
+				_localctx = new Str3Context(_localctx);
+				enterOuterAlt(_localctx, 3);
 				{
-				setState(13);
-				match(STR1);
+				setState(12);
+				match(STR3);
 				}
 				break;
 			default:
@@ -242,12 +258,12 @@ public class splitParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\6\23\4\2\t\2\4\3"+
-		"\t\3\3\2\3\2\3\2\7\2\n\n\2\f\2\16\2\r\13\2\3\3\3\3\5\3\21\n\3\3\3\2\2"+
-		"\4\2\4\2\2\2\22\2\6\3\2\2\2\4\20\3\2\2\2\6\13\5\4\3\2\7\b\7\3\2\2\b\n"+
-		"\5\4\3\2\t\7\3\2\2\2\n\r\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2"+
-		"\r\13\3\2\2\2\16\21\7\4\2\2\17\21\7\5\2\2\20\16\3\2\2\2\20\17\3\2\2\2"+
-		"\21\5\3\2\2\2\4\13\20";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5\22\4\2\t\2\4\3"+
+		"\t\3\3\2\7\2\b\n\2\f\2\16\2\13\13\2\3\3\3\3\3\3\5\3\20\n\3\3\3\2\2\4\2"+
+		"\4\2\2\2\22\2\t\3\2\2\2\4\17\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\13\3\2"+
+		"\2\2\t\7\3\2\2\2\t\n\3\2\2\2\n\3\3\2\2\2\13\t\3\2\2\2\f\20\7\3\2\2\r\20"+
+		"\7\4\2\2\16\20\7\5\2\2\17\f\3\2\2\2\17\r\3\2\2\2\17\16\3\2\2\2\20\5\3"+
+		"\2\2\2\4\t\17";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
