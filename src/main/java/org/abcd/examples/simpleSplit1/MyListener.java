@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MyListener extends Split1BaseListener{
-    public static Map<String,String> map = new HashMap<>();
-    static {
+    public Map<String,String> map = new HashMap<>();
+    {
         map.put("省",null);
         map.put("市",null);
         map.put("区",null);
